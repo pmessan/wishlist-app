@@ -20,9 +20,7 @@ function Layout({ children, home }) {
                 <meta name="twitter:card" content="summary_large_image" />
             </Head>
             <div className="absolute bg-red-400 inset-0">
-                <div className="grid grid-cols-3">
-                    {children}
-                </div>
+                {children}
             </div>
         </div>
     )
