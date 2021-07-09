@@ -1,7 +1,7 @@
 function Intro() {
   return (
     <div id="intro" className="flex flex-col justify-center items-center h-screen py-">
-      <div className="rounded-full bg-gray-50 h-40 w-40"></div>
+      <div className="inline-block pt-16 rounded-full bg-gray-50 h-40 w-40 flex items-center justify-center"></div>
       <h1 className="text-gray-100 text-center font-extrabold mt-5 text-4xl md:text-5xl lg:text-6xl">Welcome!</h1>
       <p className="mt-4 w-1/2 text-center text-gray-100 md:text-xl lg:text-2xl">
         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
