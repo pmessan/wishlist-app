@@ -3,7 +3,7 @@ import Head from 'next/head';
 const siteTitle = "Danie's Birthday wishlist."
 function Layout({ children, home }) {
     return (
-        <div>
+        <>
             <Head>
                 <link rel="icon" href="/favicon.ico" />
                 <meta
@@ -19,10 +19,14 @@ function Layout({ children, home }) {
                 <meta name="og:title" content={siteTitle} />
                 <meta name="twitter:card" content="summary_large_image" />
             </Head>
-            <div className="absolute bg-red-400 inset-0">
+            <div className="absolute overflow-auto bg-gradient-to-r from-purple-600 to-pink-500 inset-0">
                 {children}
+                <footer className="flex items-center justify-center align-bottom text-gray-300">
+                    Copyright &copy; {new Date().getFullYear()}
+                </footer>
             </div>
-        </div>
+
+        </>
     )
 }
 

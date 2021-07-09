@@ -2,11 +2,13 @@ import Item from './Item';
 
 function List({ title, children }) {
     return (
-        <div className="bg-indigo-300 mt-20 ml-8 py-6 rounded-lg">
-            <div>
-                <h1 className="font-extrabold text-center text-2xl " >{title}</h1>
+        <div className="max-w-sm mx-auto mb-16">
+            <div id="modal" className="flex flex-row items-center justify-center" >
+                <h1 className="font-extrabold text-center text-2xl mb-6 text-gray-100" >{title}</h1>
             </div>
-            {children}
+            <div className="bg-gray-200 mx-4 pb-4 pt-1 rounded-lg">
+                {children}
+            </div>
         </div>
     );
 }
