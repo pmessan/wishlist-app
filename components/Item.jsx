@@ -6,8 +6,8 @@ function Item({ wishlistItem }) {
             <div className="relative col-span-1 w-full object-cover object-center">
                 <Image src={wishlistItem.imageUrl} alt={wishlistItem.imageAlt} layout="fill" objectFit="scale-down" />
             </div>
-            <div className="block col-span-3">
-                <h1 className="text-lg text-center">{wishlistItem.description}</h1>
+            <div className="block col-span-3 py-3 px-4">
+                <p className="text-lg text-center">{wishlistItem.description}</p>
             </div>
         </div>
     );

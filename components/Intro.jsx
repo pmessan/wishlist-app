@@ -1,9 +1,9 @@
 function Intro() {
   return (
-    <div id="intro" className="flex flex-col justify-center items-center h-screen py-">
-      <div className="inline-block pt-16 rounded-full bg-gray-50 h-40 w-40 flex items-center justify-center"></div>
+    <div id="intro" className="flex flex-col justify-center items-center lg:h-screen">
+      <div className="mt-20 pt-16 rounded-full bg-gray-50 h-28 w-28 md:flex " />
       <h1 className="text-gray-100 text-center font-extrabold mt-5 text-4xl md:text-5xl lg:text-6xl">Welcome!</h1>
-      <p className="mt-4 w-1/2 text-center text-gray-100 md:text-xl lg:text-2xl">
+      <p className="mt-4 w-2/3 sm:w-1/2 text-center text-gray-100 md:text-xl lg:text-2xl">
         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
         Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s,
         when an unknown printer took a galley of type and scrambled it to make a type

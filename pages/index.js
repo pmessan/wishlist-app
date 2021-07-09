@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <Layout>
       <Intro />
-      <div className="grid md: lg:grid-cols-3 px-8 py-40">
+      <div className="grid lg:grid-cols-3 px-8 py-40">
         <List title="List A">
           {items.map((item, index) => (
             <Item key={index} id={index} wishlistItem={item} />
