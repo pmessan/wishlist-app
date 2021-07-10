@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 
 const siteTitle = "Danie's Birthday wishlist."
 function Layout({ children, home }) {
@@ -19,7 +20,7 @@ function Layout({ children, home }) {
                 <meta name="og:title" content={siteTitle} />
                 <meta name="twitter:card" content="summary_large_image" />
             </Head>
-            <div className="absolute overflow-auto bg-gradient-to-r from-purple-600 to-pink-500 inset-0">
+            <div className="absolute overflow-auto from-purple-600 to-pink-500 inset-0" id="background">
                 {children}
                 <footer className="flex items-center justify-center align-bottom text-gray-300">
                     Copyright &copy; {new Date().getFullYear()}
