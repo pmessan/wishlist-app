@@ -1,6 +1,3 @@
 @tailwind base;
 @tailwind components;
-#background {
-    background-image:url("/img/brushed-alum.png"), linear-gradient(330deg, rgba(252,11,0,1) 0%, rgba(81,94,240,1) 100%);
-}
 @tailwind utilities;

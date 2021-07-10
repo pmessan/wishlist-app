@@ -20,7 +20,7 @@ function Layout({ children, home }) {
                 <meta name="og:title" content={siteTitle} />
                 <meta name="twitter:card" content="summary_large_image" />
             </Head>
-            <div className="absolute overflow-auto from-purple-600 to-pink-500 inset-0" id="background">
+            <div className="absolute overflow-auto bg-pattern from-purple-600 to-pink-500 inset-0" id="background">
                 {children}
                 <footer className="flex items-center justify-center align-bottom text-gray-300">
                     Copyright &copy; {new Date().getFullYear()}
