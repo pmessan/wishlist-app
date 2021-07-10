@@ -4,7 +4,7 @@ To get up and running:
 
 ```bash
 git clone https://github.com/pmessan/wishlist-app.git && cd wishlist-app
-npm i
+npm i # install required packages
 npm run dev # starts the dev server
 ```
 
