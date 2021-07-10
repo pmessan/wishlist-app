@@ -5,7 +5,6 @@ To get up and running:
 ```bash
 git clone https://github.com/pmessan/wishlist-app.git && cd wishlist-app
 npm i
-eslint --init # Optional, for linting with ESLint
 npm run dev # starts the dev server
 ```
 
