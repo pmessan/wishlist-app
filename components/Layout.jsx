@@ -1,10 +1,12 @@
 import Head from 'next/head';
+import Script from 'next/script';
 
 const siteTitle = "Danie's Birthday wishlist."
 function Layout({ children, home }) {
     return (
         <>
             <Head>
+                <title>{siteTitle}</title>
                 <link rel="icon" href="/favicon.ico" />
                 <meta
                     name="description"
@@ -25,7 +27,7 @@ function Layout({ children, home }) {
                     Copyright &copy; {new Date().getFullYear()}
                 </footer>
             </div>
-
+            <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" />
         </>
     )
 }
