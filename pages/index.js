@@ -4,7 +4,6 @@ import List from '../components/List';
 import Layout from '../components/Layout';
 import Intro from '../components/Intro';
 import items from '../data/items'
-'../img/gift.jpeg'
 
 
 export default function Home() {

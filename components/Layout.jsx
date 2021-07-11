@@ -19,6 +19,7 @@ function Layout({ children, home }) {
                 />
                 <meta name="og:title" content={siteTitle} />
                 <meta name="twitter:card" content="summary_large_image" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
             </Head>
             <div className="absolute overflow-auto bg-pattern from-purple-600 to-pink-500 inset-0" id="background">
                 {children}
