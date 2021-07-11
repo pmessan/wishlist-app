@@ -32,3 +32,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+#Edwin's test page
+pages/test.js
