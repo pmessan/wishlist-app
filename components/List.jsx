@@ -1,5 +1,3 @@
-import Item from './Item';
-
 function List({ title, children }) {
     return (
         <div className="max-w-sm lg:max-w-xl mx-auto mb-16 ">
