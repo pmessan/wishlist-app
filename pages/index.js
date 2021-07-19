@@ -10,17 +10,17 @@ export default function Home() {
     <Layout>
       <Intro />
       <div className="grid xl:grid-cols-3 px-8 py-40 justify-center">
-        <List title="List A">
+        <List title="What I want">
           {items.map((item, index) => (
             <Item key={index} id={index} wishlistItem={item} />
           ))}
         </List>
-        <List title="List B">
+        <List title="Buying...">
           {items.map((item, index) => (
             <Item key={index} id={index} wishlistItem={item} />
           ))}
         </List>
-        <List title="List C">
+        <List title="Bought">
           {items.map((item, index) => (
             <Item key={index} id={index} wishlistItem={item} />
           ))}
