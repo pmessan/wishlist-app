@@ -1,11 +1,11 @@
 import Image from 'next/image'
 
-function Item({ wishlistItem: { name, imageUrl, imageAlt, description, buylink } }) {
+function Item({ wishlistItem: { name, imgUrl, imgAlt, description, buylink } }) {
     return (
         <>
             <div className="my-4 rounded-xl mx-6 h-24 bg-gray-300 grid grid-cols-4" >
                 <div className="relative col-span-1 w-full object-cover object-center" data-bs-toggle="collapse" href={'#' + name} role="button" aria-expanded="false" aria-controls={'#' + name}>
-                    <Image className="rounded-l-xl" src={imageUrl} alt={imageAlt} layout="fill" objectFit="fill" />
+                    <Image className="rounded-l-xl" src={imgUrl} alt={imgAlt} layout="fill" objectFit="fill" />
                 </div>
                 <div className="block col-span-3 px-3">
                     <h1 className="mt-2 font-bold">{name}</h1>
