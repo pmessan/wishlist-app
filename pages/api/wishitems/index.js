@@ -15,16 +15,33 @@ export default async function handler(req, res) {
                 res.status(400).json({ success: false });
             }
             break;
-        // case 'POST':
-        //     try {
-        //         const newWishItem = await WishItem.create(
-        //             req.body,
-        //         ); /* create a new model in the database */
-        //         res.status(201).json({ success: true, data: newWishItem });
-        //     } catch (error) {
-        //         res.status(400).json({ success: false });
-        //     }
-        //     break;
+        case 'POST':
+            try {
+
+                // create a new item
+                const { name, description, buyLink, imgUrl } = req.body
+                // const state = "w";
+                // const imgAlt = "a beautiful item";
+                const newWishItem =
+                {
+                    name: name,
+                    description: description,
+                    imgUrl: imgUrl,
+                    buyLink: buyLink,
+                    state: "w",
+                    imgAlt: name
+                };
+                console.log(newWishItem);
+                await WishItem.create([newWishItem], (err) => {
+                    if (err) {
+                        console.log(err);
+                    }
+                })
+                res.status(201).json({ success: true, data: newWishItem });
+            } catch (error) {
+                res.status(400).json({ success: false });
+            }
+            break;
         // default:
         //     res.status(400).json({ success: false });
         //     break;
