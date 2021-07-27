@@ -20,7 +20,7 @@ function Item({
 
       <div className="collapse" id={name}>
         <div className="px-6 my-2 flex justify-center bg-gray-200">
-          <button className="btn btn-primary" href="#">Reserve</button>
+          <button className="btn btn-primary" type="button" href="#">Reserve</button>
         </div>
       </div>
     </>

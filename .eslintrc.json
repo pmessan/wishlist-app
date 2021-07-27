@@ -25,6 +25,8 @@
         "react/prop-types": [0],
         "no-underscore-dangle": "off",
         "no-console": "off",
+        "jsx-a11y/no-redundant-roles": "off",
+        "jsx-a11y/no-noninteractive-element-to-interactive-role": "off",
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
       }
       
