@@ -1,10 +1,10 @@
+/* eslint-disable react/no-array-index-key */
 import Item from '../components/Item';
 import List from '../components/List';
 import Layout from '../components/Layout';
 import Intro from '../components/Intro';
 import dbConnect from '../utils/dbConnect';
 import WishItem from '../models/WishItem';
-
 
 export default function Home({ wishitems }) {
   return (
@@ -33,15 +33,15 @@ export default function Home({ wishitems }) {
 
 /* Retrieves pet(s) data from mongodb database */
 export async function getServerSideProps() {
-  await dbConnect()
+  await dbConnect();
 
   /* find all the data in our database */
-  const result = await WishItem.find({})
+  const result = await WishItem.find({});
   const wishitems = result.map((doc) => {
-    const wishitem = doc.toObject()
-    wishitem._id = wishitem._id.toString()
-    return wishitem
-  })
+    const wishitem = doc.toObject();
+    wishitem._id = wishitem._id.toString();
+    return wishitem;
+  });
 
-  return { props: { wishitems: wishitems } }
+  return { props: { wishitems } };
 }
