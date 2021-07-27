@@ -19,10 +19,10 @@ export default async function handler(req, res) {
             try {
 
                 // create a new item
-                const { name, description, buyLink, imgUrl } = req.body
+                let { name, description, buyLink, imgUrl } = req.body
                 // const state = "w";
                 // const imgAlt = "a beautiful item";
-                const newWishItem =
+                let newWishItem =
                 {
                     name: name,
                     description: description,
@@ -42,8 +42,8 @@ export default async function handler(req, res) {
                 res.status(400).json({ success: false });
             }
             break;
-        // default:
-        //     res.status(400).json({ success: false });
-        //     break;
+        default:
+            res.status(400).json({ success: false });
+            break;
     }
 }

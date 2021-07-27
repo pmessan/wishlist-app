@@ -1,7 +1,7 @@
-import Layout from '../../../components/Layout';
-import Input from '../../../components/Input';
-import AreaInput from '../../../components/AreaInput';
-import PhotoInput from '../../../components/PhotoInput';
+import Layout from '../components/Layout';
+import Input from '../components/Input';
+import AreaInput from '../components/AreaInput';
+import PhotoInput from '../components/PhotoInput';
 // import Button from '@material-ui/core/Button';
 
 function AddItem({ home }) {

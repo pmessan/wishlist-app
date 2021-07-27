@@ -27,4 +27,4 @@ const itemSchema = new mongoose.Schema({
     },
 });
 
-export default mongoose.models.WishItem || mongoose.model('wishitem', itemSchema);
+export default mongoose.models.WishItem || mongoose.model('WishItem', itemSchema);
