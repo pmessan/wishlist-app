@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Script from 'next/script';
 
 const siteTitle = "Danie's Birthday wishlist.";
-function Layout({ children, home }) {
+function Layout({ children }) {
   return (
     <>
       <Head>
