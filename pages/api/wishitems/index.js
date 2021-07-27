@@ -41,7 +41,8 @@ handler.post(async (req, res) => {
         console.log(err);
       }
     });
-    res.status(201).json({ success: true, data: newWishItem });
+    // res.status(201).json({ success: true, data: newWishItem });
+    res.redirect('/');
   } catch (error) {
     res.status(400).json({ success: false });
   }
