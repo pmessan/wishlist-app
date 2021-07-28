@@ -48,15 +48,6 @@ handler.post(async (req, res) => {
   }
 });
 
-// handler.patch(async (req, res) => {
-//   await dbConnect();
-//   try {
-//     res.status(200).json({ success: true });
-//   } catch (error) {
-//     res.status(400).json({ success: false });
-//   }
-// });
-
 handler.get(async (req, res) => {
   try {
     await dbConnect();
