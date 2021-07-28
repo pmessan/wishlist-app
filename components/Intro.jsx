@@ -1,9 +1,10 @@
 import Image from 'next/image';
-import profilePic from '../public/img/danie.jpg'
+import profilePic from '../public/img/danie.jpg';
+
 function Intro() {
   return (
     <div id="intro" className="flex flex-col justify-center items-center xl:h-screen">
-      <div id="dp-circle" className="mt-10 rounded-full bg-gray-50 h-28 w-28 sm:h-32 sm:w-32 md:h-40 md:w-40 lg:h-48 lg:w-48 xl:h-60 xl:w-60 overflow-hidden" >
+      <div id="dp-circle" className="mt-10 rounded-full bg-gray-50 h-28 w-28 sm:h-32 sm:w-32 md:h-40 md:w-40 lg:h-48 lg:w-48 xl:h-60 xl:w-60 overflow-hidden">
         <Image
           src={profilePic}
           alt="Danie"
@@ -22,7 +23,7 @@ function Intro() {
         versions of Lorem Ipsum.
       </p>
     </div>
-  )
+  );
 }
 
-export default Intro
+export default Intro;
