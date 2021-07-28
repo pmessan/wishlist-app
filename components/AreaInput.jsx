@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 export default function AreaInput({
   title, placeholder, name, rows,
 }) {
