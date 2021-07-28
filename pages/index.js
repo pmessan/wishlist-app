@@ -12,17 +12,17 @@ export default function Home({ wishitems }) {
       <Intro />
       <div className="grid xl:grid-cols-3 px-8 py-40 justify-center">
         <List title="What I want">
-          {wishitems.map((item, index) => (
+          {(wishitems.filter((wishItem) => wishItem.state === 'w')).map((item, index) => (
             <Item key={index} id={index} wishlistItem={item} />
           ))}
         </List>
         <List title="Buying...">
-          {wishitems.map((item, index) => (
+          {(wishitems.filter((wishItem) => wishItem.state === 'r')).map((item, index) => (
             <Item key={index} id={index} wishlistItem={item} />
           ))}
         </List>
         <List title="Bought">
-          {wishitems.map((item, index) => (
+          {(wishitems.filter((wishItem) => wishItem.state === 'b')).map((item, index) => (
             <Item key={index} id={index} wishlistItem={item} />
           ))}
         </List>

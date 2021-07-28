@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 function Item({
   wishlistItem: {
-    name, imgUrl, imgAlt, description, buylink,
+    name, imgUrl, imgAlt, description, buyLink,
   },
 }) {
   return (
@@ -14,7 +14,7 @@ function Item({
         <div className="block col-span-3 px-3">
           <h1 className="mt-2 font-bold">{name}</h1>
           <p className="text-xs xl:text-md text-left mb-1" data-bs-toggle="collapse" href={`#${name}`} role="button" aria-expanded="false" aria-controls={`#${name}`}>{description}</p>
-          <a href={buylink} className="sm:text-xs xl:text-md text-left text-purple-600">View item &gt;</a>
+          <a href={buyLink} className="sm:text-xs xl:text-md text-left text-purple-600">View item &gt;</a>
         </div>
       </div>
 
