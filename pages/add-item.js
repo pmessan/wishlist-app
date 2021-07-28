@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Input from '../components/Input';
 import AreaInput from '../components/AreaInput';
 import PhotoInput from '../components/PhotoInput';
@@ -27,7 +28,11 @@ function AddItem() {
           </Container>
           <div className="flex items-center justify-center mt-5">
             <a className="btn btn-danger w-1/6 mr-8" href="/api/logout">Logout</a>
-            <a className="btn btn-danger w-1/6" href="/api/logout">Logout</a>
+          </div>
+          <div className="flex items-center justify-center mt-5">
+            <Link href="/">
+              <a>&lt; Back to home</a>
+            </Link>
           </div>
         </Background>
       )}
