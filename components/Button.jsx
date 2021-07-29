@@ -15,33 +15,42 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ReservedButtonCircle() {
+// export default function ReservedButtonCircle() {
+//   const [isReserved, setIsReserved] = useState(false);
+
+//   function handleClick() {
+//     setIsReserved(!isReserved);
+//   }
+
+//   return (
+//     <Fab
+//       style={{
+//         background: '#FCDDEC', color: isReserved ? '#4E962C' : '#000',
+//         width: '36px', height: '36px',
+//       }}
+//       onClick={handleClick}
+//     >
+//       {isReserved ? <FavoriteIcon /> : <FavoriteBorderIcon />}
+//     </Fab>
+//   );
+// }
+
+export default function ReserveButtonExtended() {
   const [isReserved, setIsReserved] = useState(false);
 
   function handleClick() {
     setIsReserved(!isReserved);
   }
 
-  return (
-    <Fab
-      style={{
-        background: '#FCDDEC', color: isReserved ? '#4E962C' : '#000', width: '36px', height: '36px',
-      }}
-      onClick={handleClick}
-    >
-      {isReserved ? <FavoriteIcon /> : <FavoriteBorderIcon />}
-    </Fab>
-  );
-}
-
-function ReserveButtonExtended() {
   const classes = useStyles();
   return (
-    <Fab variant="extended" style={{ background: '#4E962C', color: '#fff', height: '36px' }}>
-      <FavoriteBorderIcon className={classes.extendedIcon} />
+    <Fab variant="extended" style={{ background: '#4E962C', color: '#fff', height: '36px' }} onClick={handleClick}>
+
+      {isReserved ? <FavoriteIcon className={classes.extendedIcon} />
+        : <FavoriteBorderIcon className={classes.extendedIcon} />}
       Reserve
     </Fab>
   );
 }
 
-export { ReserveButtonExtended };
+// export { ReserveButtonExtended };
