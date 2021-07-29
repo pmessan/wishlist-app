@@ -27,7 +27,7 @@ function AddItem() {
             </Form>
           </Container>
           <div className="flex items-center justify-center mt-5">
-            <a className="btn btn-danger w-1/6 mr-8" href="/api/logout">Logout</a>
+            <a className="btn btn-danger w-36 mr-8" href="/api/logout">Logout</a>
           </div>
           <div className="flex items-center justify-center mt-5">
             <Link href="/">
