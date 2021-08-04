@@ -10,13 +10,13 @@
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
     },
-    "parser": "@babel/eslint-parser",
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
         },
         "ecmaVersion": 2020,
-        "sourceType": "module"
+        "sourceType": "module",
+        "requireConfigFile": false
     },
     "plugins": [
         "react"
@@ -29,7 +29,7 @@
         "jsx-a11y/no-redundant-roles": "off",
         "jsx-a11y/no-noninteractive-element-to-interactive-role": "off",
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
-      },
-      "requireConfigFile": false
+      }
+   
       
 }
