@@ -37,6 +37,7 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.14.9",
     "@types/bootstrap": "^5.0.17",
     "autoprefixer": "^10.2.6",
     "eslint": "^7.31.0",

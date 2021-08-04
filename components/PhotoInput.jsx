@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 export default function PhotoInput({ title, prompt, name }) {
   return (
     <label className="block">

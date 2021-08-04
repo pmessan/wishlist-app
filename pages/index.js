@@ -1,6 +1,5 @@
 /* eslint-disable react/no-array-index-key */
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-import Link from 'next/link';
 import Item from '../components/Item';
 import List from '../components/List';
 import Layout from '../components/Layout';
