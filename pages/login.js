@@ -29,7 +29,7 @@ const Login = () => {
         body: JSON.stringify(body),
       });
       if (res.status === 200) {
-        Router.push('/add-item');
+        Router.push('/');
       } else {
         throw new Error(await res.text());
       }

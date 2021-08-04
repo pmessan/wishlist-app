@@ -44,12 +44,20 @@ export default function ReserveButtonExtended() {
 
   const classes = useStyles();
   return (
-    <Fab variant="extended" style={{ background: '#4E962C', color: '#fff', height: '36px' }} onClick={handleClick}>
+    isReserved
+      ? (
+        <Fab variant="extended" style={{ background: '#ff1694', color: '#fff', height: '36px' }} onClick={handleClick}>
+          <FavoriteIcon className={classes.extendedIcon} />
+          Reserved
+        </Fab>
+      )
+      : (
+        <Fab variant="extended" style={{ background: '#4E962C', color: '#fff', height: '36px' }} onClick={handleClick}>
+          <FavoriteBorderIcon className={classes.extendedIcon} />
+          Reserve
+        </Fab>
+      )
 
-      {isReserved ? <FavoriteIcon className={classes.extendedIcon} />
-        : <FavoriteBorderIcon className={classes.extendedIcon} />}
-      Reserve
-    </Fab>
   );
 }
 

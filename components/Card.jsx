@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Button from './Button';
+import ItemButton from './ItemButton';
 
 export default function Card({
   wishlistItem: {
@@ -7,7 +7,7 @@ export default function Card({
   },
 }) {
   return (
-    <div className="card" style={{ width: '22rem', borderRadius: '0.5rem' }}>
+    <div className="card" style={{ width: '22rem', height: '14rem', borderRadius: '0.5rem' }}>
       <div className="card-body relative">
         <div className="grid grid-cols-3 justify-between">
           <Image src={imgUrl} alt={imgAlt} height="75" width="75" className="rounded col-span-1" />
@@ -21,7 +21,7 @@ export default function Card({
         </div>
         <div className="flex justify-end absolute bottom-2.5 right-2.5 space-x-2.5">
           {/* <Button /> */}
-          <Button />
+          <ItemButton />
         </div>
         <br />
       </div>

@@ -7,6 +7,7 @@ import { useUser } from '../lib/hooks';
 import Background from '../components/Background';
 import Header from '../components/Header';
 import Container from '../components/Container';
+import LinkButton from '../components/LinkButton';
 
 // import Button from '@material-ui/core/Button';
 
@@ -26,13 +27,9 @@ function AddItem() {
               <PhotoInput title="Upload a picture" prompt="Image should ideally be square, with the gift item in focus." name="itemImg" />
             </Form>
           </Container>
-          <div className="flex items-center justify-center mt-5">
-            <a className="btn btn-danger w-36 mr-8" href="/api/logout">Logout</a>
-          </div>
-          <div className="flex items-center justify-center mt-5">
-            <Link href="/">
-              <a>&lt; Back to home</a>
-            </Link>
+          <div className="container mx-auto flex flex-row justify-center mt-5 mb-12">
+            <LinkButton text="Back to Home" href="/" styles="btn btn-primary w-36 mr-8" />
+            <LinkButton text="Logout" href="/api/logout" styles="btn btn-danger w-36 mr-8" />
           </div>
         </Background>
       )}

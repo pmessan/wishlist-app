@@ -24,8 +24,8 @@ function Layout({ children }) {
       </Head>
       <div className="absolute overflow-auto bg-pattern from-purple-600 to-pink-500 inset-0" id="background">
         {children}
-        <footer className="flex items-center justify-center align-bottom text-gray-300">
-          Copyright &copy;
+        <footer className="flex items-center justify-center align-bottom pb-6 text-gray-300">
+          Copyright &copy; Gifko Graphix
           {' '}
           {new Date().getFullYear()}
         </footer>
