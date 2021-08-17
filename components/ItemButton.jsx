@@ -1,7 +1,7 @@
 // import React, { useState } from 'react';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import { makeStyles } from '@material-ui/core/styles';
-// import FavoriteIcon from '@material-ui/icons/Favorite';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 import Fab from '@material-ui/core/Fab';
 
 const useStyles = makeStyles((theme) => ({
@@ -35,7 +35,9 @@ const useStyles = makeStyles((theme) => ({
 //   );
 // }
 
-export default function ReserveButtonExtended({ buttonText, color }) {
+export default function ReserveButtonExtended({
+  buttonText, color, onClick, filled,
+}) {
   // const [isReserved, setIsReserved] = useState(false);
 
   // function handleClick() {
@@ -44,8 +46,10 @@ export default function ReserveButtonExtended({ buttonText, color }) {
 
   const classes = useStyles();
   return (
-    <Fab variant="extended" style={{ background: color, color: '#fff', height: '36px' }}>
-      <FavoriteBorderIcon className={classes.extendedIcon} />
+    <Fab variant="extended" style={{ background: color, color: '#fff', height: '36px' }} onClick={onClick}>
+      {filled
+        ? <FavoriteIcon className={classes.extendedIcon} />
+        : <FavoriteBorderIcon className={classes.extendedIcon} />}
       {buttonText}
     </Fab>
   );

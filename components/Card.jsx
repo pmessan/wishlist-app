@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import ItemButton from './ItemButton';
 
 export default function Card({
@@ -11,17 +11,14 @@ export default function Card({
 
   function reserveItem() {
     setItemState('r');
-    // console.log(itemState);
   }
 
   function boughtItem() {
     setItemState('b');
-    // console.log(itemState);
   }
 
   function wishListItem() {
     setItemState('w');
-    // console.log(itemState);
   }
 
   return (
@@ -35,7 +32,6 @@ export default function Card({
         </div>
         <div>
           <p className="pt-2">{description}</p>
-          <p className="pt-1">{itemState}</p>
           <a href={buyLink} className="pt-1 text-purple-600">View Item &gt;</a>
         </div>
         <div className="flex justify-end absolute bottom-2.5 right-2.5 space-x-2.5">
@@ -44,10 +40,10 @@ export default function Card({
           && (
           <>
             <ItemButton id="reserve" buttonText="Bought?" color="#4361ee" onClick={boughtItem} />
-            <ItemButton id="reserved" buttonText="Reserved!" color="#ff1694" onClick={wishListItem} />
+            <ItemButton id="reserved" buttonText="Reserved!" color="#ff1694" onClick={wishListItem} filled />
           </>
           )}
-          {itemState === 'b' && <ItemButton id="reserve" buttonText="Bought!" color="#f48c06" onClick={reserveItem} />}
+          {itemState === 'b' && <ItemButton id="reserve" buttonText="Bought!" color="#f48c06" onClick={reserveItem} filled />}
         </div>
         <br />
       </div>
