@@ -1,7 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-import Item from '../components/Item';
-import List from '../components/List';
+// import Item from '../components/Item';
+// import List from '../components/List';
 import Layout from '../components/Layout';
 import Intro from '../components/Intro';
 import dbConnect from '../utils/dbConnect';
@@ -20,7 +20,7 @@ export default function Home({ wishitems }) {
         <LinkButton text="Login" href="/login" styles="mt-8 right-24 btn btn-outline-light w-24" />
         )}
       </Intro>
-
+      {/*
       <div className="grid xl:grid-cols-3 px-8 py-40 justify-center">
         <List title="What I want">
           {(wishitems.filter((wishItem) => wishItem.state === 'w')).map((item, index) => (
@@ -37,7 +37,7 @@ export default function Home({ wishitems }) {
             <Item key={index} id={index} wishlistItem={item} />
           ))}
         </List>
-      </div>
+      </div> */}
 
       <div className="flex flex-row justify-center space-x-5">
         <FavoriteBorderIcon style={{ fontSize: '2.25rem', color: 'rgb(243,244,246)' }} />

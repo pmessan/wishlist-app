@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import { makeStyles } from '@material-ui/core/styles';
-import FavoriteIcon from '@material-ui/icons/Favorite';
+// import FavoriteIcon from '@material-ui/icons/Favorite';
 import Fab from '@material-ui/core/Fab';
 
 const useStyles = makeStyles((theme) => ({
@@ -35,30 +35,39 @@ const useStyles = makeStyles((theme) => ({
 //   );
 // }
 
-export default function ReserveButtonExtended() {
-  const [isReserved, setIsReserved] = useState(false);
+export default function ReserveButtonExtended({ buttonText, color }) {
+  // const [isReserved, setIsReserved] = useState(false);
 
-  function handleClick() {
-    setIsReserved(!isReserved);
-  }
+  // function handleClick() {
+  //   setIsReserved(!isReserved);
+  // }
 
   const classes = useStyles();
   return (
-    isReserved
-      ? (
-        <Fab variant="extended" style={{ background: '#ff1694', color: '#fff', height: '36px' }} onClick={handleClick}>
-          <FavoriteIcon className={classes.extendedIcon} />
-          Reserved
-        </Fab>
-      )
-      : (
-        <Fab variant="extended" style={{ background: '#4E962C', color: '#fff', height: '36px' }} onClick={handleClick}>
-          <FavoriteBorderIcon className={classes.extendedIcon} />
-          Reserve
-        </Fab>
-      )
-
+    <Fab variant="extended" style={{ background: color, color: '#fff', height: '36px' }}>
+      <FavoriteBorderIcon className={classes.extendedIcon} />
+      {buttonText}
+    </Fab>
   );
+
+  // return (
+  // isReserved
+  //   ? (
+  //     <Fab variant="extended"
+  // style={{ background: '#ff1694', color: '#fff', height: '36px' }} onClick={handleClick}>
+  //       <FavoriteIcon className={classes.extendedIcon} />
+  //       Reserved
+  //     </Fab>
+  //   )
+  //   : (
+  //     <Fab variant="extended"
+  // style={{ background: '#4E962C', color: '#fff', height: '36px' }} onClick={handleClick}>
+  //       <FavoriteBorderIcon className={classes.extendedIcon} />
+  //       Reserve
+  //     </Fab>
+  //   )
+
+  // );
 }
 
 // export { ReserveButtonExtended };
