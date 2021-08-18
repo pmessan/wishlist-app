@@ -15,15 +15,14 @@ const handler = nextConnect();
 handler.use(middleware);
 
 handler.patch(async (req, res) => {
-  await dbConnect();
+  // console.log('Body:');
+  // console.log(req.body);
   try {
-    const { id, newState: [newState] } = req.query;
-    WishItem.findByIdAndUpdate(id, { state: newState }, (err) => {
-      if (err) {
-        console.log(err);
-      }
-    });
-    res.status(200).json({ success: true });
+    await dbConnect();
+    const { state: [itemState], id: [itemId] } = req.body;
+    const item = await WishItem.findOneAndUpdate({ _id: itemId }, { state: itemState });
+    console.log(item);
+    res.status(200).json({ success: true, data: item });
   } catch (error) {
     res.status(400).json({ success: false });
   }

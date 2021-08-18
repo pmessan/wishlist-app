@@ -20,32 +20,14 @@ export default function Home({ wishitems }) {
         <LinkButton text="Login" href="/login" styles="mt-8 right-24 btn btn-outline-light w-24" />
         )}
       </Intro>
-      {/*
-      <div className="grid xl:grid-cols-3 px-8 py-40 justify-center">
-        <List title="What I want">
-          {(wishitems.filter((wishItem) => wishItem.state === 'w')).map((item, index) => (
-            <Item key={index} id={index} wishlistItem={item} />
-          ))}
-        </List>
-        <List title="Buying...">
-          {(wishitems.filter((wishItem) => wishItem.state === 'r')).map((item, index) => (
-            <Item key={index} id={index} wishlistItem={item} />
-          ))}
-        </List>
-        <List title="Bought">
-          {(wishitems.filter((wishItem) => wishItem.state === 'b')).map((item, index) => (
-            <Item key={index} id={index} wishlistItem={item} />
-          ))}
-        </List>
-      </div> */}
 
-      <div className="flex flex-row justify-center space-x-5">
+      <div className="mt-4 flex flex-row justify-center space-x-5">
         <FavoriteBorderIcon style={{ fontSize: '2.25rem', color: 'rgb(243,244,246)' }} />
         <Header title="Wishlist" />
       </div>
 
-      <div className="w-auto h-auto bg-gray-300 container mx-64 mb-14 xl:mb-12 rounded-md p-10 flex flex-wrap gap-x-4 gap-y-4">
-        {(wishitems.filter((wishItem) => wishItem.state === 'w')).map((item, index) => (
+      <div className="sm:w-24 w-auto h-auto bg-gray-300 container mx-8 lg:mx-36 mb-14 xl:mb-12 rounded-md p-3 lg:p-10 flex flex-wrap gap-x-8 lg:gap-4 gap-y-8">
+        {wishitems.map((item, index) => (
           <Card key={index} id={index} wishlistItem={item} className="flex-none" />
         ))}
       </div>
