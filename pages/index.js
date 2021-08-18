@@ -21,12 +21,12 @@ export default function Home({ wishitems }) {
         )}
       </Intro>
 
-      <div className="mt-4 flex flex-row justify-center space-x-5">
+      <div className="mt-4 md:mt-8 flex flex-row justify-center space-x-5">
         <FavoriteBorderIcon style={{ fontSize: '2.25rem', color: 'rgb(243,244,246)' }} />
         <Header title="Wishlist" />
       </div>
 
-      <div className="sm:w-24 w-auto h-auto bg-gray-300 container mx-8 lg:mx-36 mb-14 xl:mb-12 rounded-md p-3 lg:p-10 flex flex-wrap gap-x-8 lg:gap-4 gap-y-8">
+      <div className="sm:w-24 w-auto h-auto bg-gray-300 container mx-8 lg:mx-40 xl:mx-52 2xl:mx-80 mb-14 xl:mb-12 rounded-md p-3 flex flex-wrap gap-x-8 lg:gap-4 gap-y-8 justify-center">
         {wishitems.map((item, index) => (
           <Card key={index} id={index} wishlistItem={item} className="flex-none" />
         ))}

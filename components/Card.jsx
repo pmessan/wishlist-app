@@ -72,7 +72,7 @@ export default function Card({
           <p className="pt-2">{description}</p>
           <a href={buyLink} className="pt-1 pb-4 lg:pb-0 text-purple-600">View Item &gt;</a>
         </div>
-        <div className="inline-flex flex-col items-center lg:absolute lg:flex-row container mx-auto lg:justify-end mt-3 lg:mt-6 bottom-0 lg:bottom-0.5 lg:right-0 lg:space-x-2.5 lg:space-y-0 space-y-1">
+        <div className="inline-flex flex-col items-center lg:absolute sm:flex-row container mx-auto lg:justify-end mt-3 lg:mt-6 bottom-0 lg:bottom-0.5 lg:right-0 lg:space-x-2.5 lg:space-y-0 space-y-1">
           {itemState === 'w' && <ItemButton id="reserve" buttonText="Reserve" color="#4E962C" onClick={reserveItem} />}
           {itemState === 'r'
           && (
