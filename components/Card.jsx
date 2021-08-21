@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { mutate } from 'swr';
 import ItemButton from './ItemButton';
 
@@ -58,6 +58,11 @@ export default function Card({
     setItemState('w');
     // patchData(itemState);
   }
+
+  useEffect(() => {
+    patchData(itemState);
+    setItemState(itemState);
+  }, [itemState]);
 
   return (
     <div className="card lg:h-56 w-80 rounded-lg">
