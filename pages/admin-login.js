@@ -1,14 +1,17 @@
 import { useState } from 'react';
 import Router from 'next/router';
-import useUser from '../lib/hooks';
+import { useAdmin } from '../lib/admin-hooks';
 import Form from '../components/Form';
 import Input from '../components/Input';
 import Background from '../components/Background';
 import Container from '../components/Container';
 import Header from '../components/Header';
+// import { } from 'dotenv/config';
+
+// const { ADMIN_KEY } = process.env;
 
 const Login = () => {
-  useUser({ redirectTo: '/', redirectIfFound: true });
+  useAdmin({ redirectTo: '/add-item', redirectIfFound: true });
 
   const [errorMsg, setErrorMsg] = useState('');
 
@@ -23,13 +26,14 @@ const Login = () => {
     };
 
     try {
-      const res = await fetch('/api/login', {
+      const res = await fetch('/api/admin-login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
       });
       if (res.status === 200) {
-        Router.push('/');
+        console.log('here!!!');
+        Router.push('/add-item');
       } else {
         throw new Error(await res.text());
       }
@@ -39,11 +43,20 @@ const Login = () => {
     }
   }
 
+  // function adminKey() {
+  //   const givenKey = prompt('Enter admin key: ');
+  //   if (!(givenKey === ADMIN_KEY)) {
+  //     alert('Incorrect.');
+  //     Router.push('/add-item');
+  //   }
+  // }
+
   return (
     <Background>
-      <Header title="Login" />
+      {/* {adminKey} */}
+      <Header title="Admin Login" />
       <Container>
-        <Form title="Login" buttonText="Login" onSubmit={handleSubmit}>
+        <Form title="Admin Login" buttonText="Login" onSubmit={handleSubmit}>
           <Input name="username" title="Email Address" placeholder="JohnDoe@example.com" type="email" />
           <Input name="password" title="Password" placeholder="Password" type="password" />
         </Form>

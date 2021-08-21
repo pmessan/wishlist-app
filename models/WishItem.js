@@ -25,6 +25,10 @@ const itemSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  owner: {
+    type: String,
+    required: true,
+  },
 });
 
 export default mongoose.models.WishItem || mongoose.model('WishItem', itemSchema);

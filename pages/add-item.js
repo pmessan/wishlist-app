@@ -2,20 +2,23 @@ import Input from '../components/Input';
 import AreaInput from '../components/AreaInput';
 import PhotoInput from '../components/PhotoInput';
 import Form from '../components/Form';
-import { useUser } from '../lib/hooks';
+// import { useUser } from '../lib/hooks';
 import Background from '../components/Background';
 import Header from '../components/Header';
 import Container from '../components/Container';
 import LinkButton from '../components/LinkButton';
+import { useAdmin } from '../lib/admin-hooks';
 
 // import Button from '@material-ui/core/Button';
 
 function AddItem() {
-  // check if user is logged in
-  const user = useUser({ redirectTo: '/login' });
+  // check if admin is logged in
+  const admin = useAdmin();
+  console.log('add item');
+  console.log(admin);
   return (
     <>
-      {user && (
+      {admin && (
         <Background>
           <Header title="Create New Item" />
           <Container>

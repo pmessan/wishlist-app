@@ -8,11 +8,14 @@ import dbConnect from '../utils/dbConnect';
 import WishItem from '../models/WishItem';
 import Card from '../components/Card';
 import Header from '../components/Header';
-import { useUser } from '../lib/hooks';
+import useUser from '../lib/hooks';
 import LinkButton from '../components/LinkButton';
+import { useAdmin } from '../lib/admin-hooks';
 
 export default function Home({ wishitems }) {
   const user = useUser();
+  const admin = useAdmin();
+  // console.log(admin);
   return (
     <Layout>
       <Intro>
@@ -26,15 +29,22 @@ export default function Home({ wishitems }) {
         <Header title="Wishlist" />
       </div>
 
-      <div className="sm:w-24 w-auto h-auto bg-gray-300 container mx-8 lg:mx-40 xl:mx-52 2xl:mx-80 mb-14 xl:mb-12 rounded-md p-3 flex flex-wrap gap-x-8 lg:gap-4 gap-y-8 justify-center">
-        {wishitems.map((item, index) => (
-          <Card key={index} id={index} wishlistItem={item} className="flex-none" />
-        ))}
-      </div>
+      {user ? (
+        <div className="sm:w-24 w-auto h-auto bg-gray-300 container mx-8 lg:mx-40 xl:mx-52 2xl:mx-80 mb-14 xl:mb-12 rounded-md p-3 flex flex-wrap gap-x-8 lg:gap-4 gap-y-8 justify-center">
+          {wishitems.map((item, index) => (
+            <Card key={index} id={index} wishlistItem={item} className="flex-none" />
+          ))}
+        </div>
+      )
+        : (
+          <div className="flex flex-col items-center mb-10">
+            <h1 className="text-xl text-gray-200 text-center">Login to view the  wishlist items.</h1>
+          </div>
+        )}
 
       {user && (
         <div className="container mx-auto flex flex-row justify-center mt-5 mb-12">
-          <LinkButton text="Add Item" href="/add-item" styles="btn btn-primary w-36 mr-8" />
+          { admin && <LinkButton text="Add Item" href="/add-item" styles="btn btn-primary w-36 mr-8" /> }
           <LinkButton text="Logout" href="/api/logout" styles="btn btn-danger w-36 mr-8" />
         </div>
       )}
@@ -43,7 +53,7 @@ export default function Home({ wishitems }) {
   );
 }
 
-/* Retrieves pet(s) data from mongodb database */
+/* Retrieves items data from mongodb database */
 export async function getServerSideProps() {
   await dbConnect();
 

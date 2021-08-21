@@ -10,20 +10,20 @@ export default function Card({
   },
 }) {
   const router = useRouter();
-  const contentType = 'multipart/form-data';
-  const [errors, setErrors] = useState({});
-  const [message, setMessage] = useState('');
+  // const contentType = 'multipart/form-data';
+  // const [errors, setErrors] = useState({});
+  const [, setMessage] = useState('');
   const [itemState, setItemState] = useState(initialState);
 
   /* The PUT method edits an existing entry in the mongodb database. */
-  const patchData = async () => {
-    const { id } = router.query;
+  const patchData = async (newItemState) => {
+    // const { id } = router.query;
     // console.log('id');
     // console.log(id);
 
     const formData = new FormData();
     formData.append('id', itemId);
-    formData.append('state', itemState);
+    formData.append('state', newItemState);
     try {
       const res = await fetch(`/api/wishitems/${itemId}`, {
         method: 'PATCH',
@@ -46,17 +46,17 @@ export default function Card({
 
   function reserveItem() {
     setItemState('r');
-    patchData();
+    // patchData(itemState);
   }
 
   function boughtItem() {
     setItemState('b');
-    patchData();
+    // patchData(itemState);
   }
 
   function wishListItem() {
     setItemState('w');
-    patchData();
+    // patchData(itemState);
   }
 
   return (
