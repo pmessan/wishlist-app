@@ -2,13 +2,19 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { mutate } from 'swr';
+import useUser from '../lib/hooks';
 import ItemButton from './ItemButton';
 
 export default function Card({
   wishlistItem: {
-    _id: itemId, name, imgUrl, imgAlt, description, buyLink, state: initialState,
+    _id: itemId, name, imgUrl, imgAlt, description, buyLink, state: initialState, owner,
   },
 }) {
+  const user = useUser();
+  console.log('user:');
+  console.log(user);
+  const [{ id: userId }] = user;
+
   const router = useRouter();
   // const contentType = 'multipart/form-data';
   // const [errors, setErrors] = useState({});
@@ -16,7 +22,7 @@ export default function Card({
   const [itemState, setItemState] = useState(initialState);
 
   /* The PUT method edits an existing entry in the mongodb database. */
-  const patchData = async (newItemState) => {
+  const patchData = async (newItemState, newUserId) => {
     // const { id } = router.query;
     // console.log('id');
     // console.log(id);
@@ -24,6 +30,8 @@ export default function Card({
     const formData = new FormData();
     formData.append('id', itemId);
     formData.append('state', newItemState);
+    formData.append('owner', newUserId);
+
     try {
       const res = await fetch(`/api/wishitems/${itemId}`, {
         method: 'PATCH',
@@ -60,7 +68,7 @@ export default function Card({
   }
 
   useEffect(() => {
-    patchData(itemState);
+    patchData(itemState, userId);
     setItemState(itemState);
   }, [itemState]);
 
@@ -78,15 +86,16 @@ export default function Card({
           <a href={buyLink} className="pt-1 pb-4 lg:pb-0 text-purple-600">View Item &gt;</a>
         </div>
         <div className="inline-flex flex-col items-center lg:absolute sm:flex-row container mx-auto lg:justify-end mt-3 lg:mt-6 bottom-0 lg:bottom-0.5 lg:right-0 lg:space-x-2.5 lg:space-y-0 space-y-1">
-          {itemState === 'w' && <ItemButton id="reserve" buttonText="Reserve" color="#4E962C" onClick={reserveItem} />}
-          {itemState === 'r'
-          && (
+          {(owner === 'undefined' || owner === userId) && itemState === 'w' && (<ItemButton id="reserve" buttonText="Reserve" color="#4E962C" onClick={reserveItem} />)}
+          {(owner === 'undefined' || owner === userId) && itemState === 'r' && (
           <>
             <ItemButton id="reserve" buttonText="Bought?" color="#4361ee" onClick={boughtItem} />
             <ItemButton id="reserved" buttonText="Reserved!" color="#ff1694" onClick={wishListItem} filled />
           </>
           )}
-          {itemState === 'b' && <ItemButton id="reserve" buttonText="Bought!" color="#f48c06" onClick={reserveItem} filled />}
+          {(owner === 'undefined' || owner === userId) && itemState === 'b' && (<ItemButton id="reserve" buttonText="Bought!" color="#f48c06" onClick={reserveItem} filled />
+          )}
+          {(!(owner === 'undefined') && (owner === !userId)) && <ItemButton id="reserved" buttonText="Reserved" disabled />}
         </div>
         <br />
       </div>

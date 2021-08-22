@@ -10,12 +10,13 @@ import Card from '../components/Card';
 import Header from '../components/Header';
 import useUser from '../lib/hooks';
 import LinkButton from '../components/LinkButton';
-import { useAdmin } from '../lib/admin-hooks';
+// import { useAdmin } from '../lib/admin-hooks';
 
 export default function Home({ wishitems }) {
   const user = useUser();
-  const admin = useAdmin();
-  // console.log(admin);
+  // const [{ id }] = user;
+  // const admin = useAdmin();
+  // console.log(user);
   return (
     <Layout>
       <Intro>
@@ -44,7 +45,7 @@ export default function Home({ wishitems }) {
 
       {user && (
         <div className="container mx-auto flex flex-row justify-center mt-5 mb-12">
-          { admin && <LinkButton text="Add Item" href="/add-item" styles="btn btn-primary w-36 mr-8" /> }
+          {/* { admin && <LinkButton text="Add Item" href="/add-item" styles="btn btn-primary w-36 mr-8" /> } */}
           <LinkButton text="Logout" href="/api/logout" styles="btn btn-danger w-36 mr-8" />
         </div>
       )}

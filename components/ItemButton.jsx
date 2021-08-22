@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
 // }
 
 export default function ReserveButtonExtended({
-  buttonText, color, onClick, filled,
+  buttonText, color, onClick, filled, disabled,
 }) {
   // const [isReserved, setIsReserved] = useState(false);
 
@@ -46,12 +46,19 @@ export default function ReserveButtonExtended({
 
   const classes = useStyles();
   return (
-    <Fab variant="extended" style={{ background: color, color: '#fff', height: '36px' }} onClick={onClick}>
-      {filled
-        ? <FavoriteIcon className={classes.extendedIcon} />
-        : <FavoriteBorderIcon className={classes.extendedIcon} />}
-      {buttonText}
-    </Fab>
+    disabled ? (
+      <Fab variant="extended" style={{ background: '#999999', color: '#fff', height: '36px' }} disabled>
+        <FavoriteIcon className={classes.extendedIcon} />
+        Reserved
+      </Fab>
+    ) : (
+      <Fab variant="extended" style={{ background: color, color: '#fff', height: '36px' }} onClick={onClick}>
+        {filled
+          ? <FavoriteIcon className={classes.extendedIcon} />
+          : <FavoriteBorderIcon className={classes.extendedIcon} />}
+        {buttonText}
+      </Fab>
+    )
   );
 
   // return (

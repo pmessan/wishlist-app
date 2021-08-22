@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 // import fs from 'fs';
 import nextConnect from 'next-connect';
 import dbConnect from '../../../utils/dbConnect';
@@ -19,9 +20,11 @@ handler.patch(async (req, res) => {
   // console.log(req.body);
   try {
     await dbConnect();
-    const { state: [itemState], id: [itemId] } = req.body;
-    const item = await WishItem.findOneAndUpdate({ _id: itemId }, { state: itemState });
-    console.log(item);
+    const { state: [itemState], id: [itemId], owner: [ownerId] } = req.body;
+    console.log('owner id');
+    console.log(req.body);
+    const item = await WishItem.findOneAndUpdate({ _id: itemId }, { state: itemState, owner: ownerId });
+    // console.log(item);
     res.status(200).json({ success: true, data: item });
   } catch (error) {
     res.status(400).json({ success: false });

@@ -28,6 +28,7 @@ const itemSchema = new mongoose.Schema({
   owner: {
     type: String,
     required: true,
+    default: '',
   },
 });
 
